@@ -1,0 +1,103 @@
+<html>
+    <head>
+        <title>
+            CULP - Calculator for Uniswap Liquidity Pool
+        </title>
+        <script>
+            function calculate()
+            {
+                let totalLiquidity = eval(document.getElementById("totalLiquidity").value);
+                let upperBound = eval(document.getElementById("upperBound").value);
+                let lowerBound = eval(document.getElementById("lowerBound").value);
+                let currentQuotedPrice = eval(document.getElementById("currentQuotedPrice").value);
+                let quotedFraction = (upperBound - currentQuotedPrice) / (upperBound - lowerBound);
+                let baseFraction = 1 - quotedFraction
+                let quotedPercentage = Math.round(quotedFraction * 100);
+                document.getElementById("quotedPercentage").value = quotedPercentage;
+                let basePercentage = Math.round(baseFraction * 100);
+                document.getElementById("basePercentage").value = basePercentage;
+                let baseCurrencyToAdd = baseFraction * totalLiquidity;
+                document.getElementById("baseCurrencyToAdd").value = baseCurrencyToAdd;
+                let quotedCurrencyToAdd = (totalLiquidity / currentQuotedPrice) * quotedFraction;
+                document.getElementById("quotedCurrencyToAdd").value = quotedCurrencyToAdd;
+            }
+        </script>
+        <style>
+            th {
+                text-align: right;
+            }
+        </style>
+    </head>
+    <body>
+        <h1> CULP - Calculator for Uniswap Liquidity Pool</h1>
+        <table>
+            <tr>
+                <th>
+                    Total liquidity to add in base currency:
+                </th>
+                <td>
+                    <input type="number" id="totalLiquidity"/>
+                </td>
+            </tr>
+            <tr>
+                <th>Upper bound of liquidity range in base currency:</th>
+                <td>
+                    <input type="number" id="upperBound"/>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Lower bound of liquidity range in base currency:
+                </th>
+                <td>
+                    <input type="number" id="lowerBound"/>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Current price of quoted currency:
+                </th>
+                <td>
+                    <input type="number" id="currentQuotedPrice"/>
+                </td>
+            </tr>
+            <tr>
+                <th>Get results:</th>
+                <td><input type="button" value="Calculate" onclick="calculate()"></td>
+            </tr>
+            <tr>
+                <th>
+                    Percentage of base currency to add:
+                </th>
+                <td>
+                    <input type="number" id="basePercentage"/>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Percentage of quoted currency to add:
+                </th>
+                <td>
+                    <input type="number" id="quotedPercentage"/>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Amount of base currency to add:
+                </th>
+                <td>
+                    <input type="number" id="baseCurrencyToAdd"/>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Amount of quoted currency to add:
+                </th>
+                <td>
+                    <input type="number" id="quotedCurrencyToAdd"/>
+                </td>
+            </tr>
+        </table>
+        
+    </body>
+</html>
