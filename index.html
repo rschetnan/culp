@@ -15,7 +15,7 @@
                 let baseLiquidityCost = baseLiquidity * currentPrice;
                 let totalLiquidityCost = quoteLiquidity + baseLiquidity;
                 let quotePecentage = quoteLiquidity / totalLiquidityCost * 100;
-                let basePercentage = baseLiquidity /  totalLiquidityCost * 100;
+                let basePercentage = baseLiquidityCost /  totalLiquidityCost * 100;
                 document.getElementById("quotePercentage").value = Math.round(quotePecentage);
                 document.getElementById("basePercentage").value = Math.round(basePercentage);
                 document.getElementById("quoteLiquidity").value = quoteLiquidity;
@@ -85,7 +85,7 @@
             </tr>
             <tr>
                 <th>
-                    Total liquidity cost:
+                    Total cost of liquidity position:
                 </th>
                 <td>
                     <input type="number" readonly="true" id="totalLiquidityCost"/>
@@ -93,7 +93,7 @@
             </tr>
             <tr>
                 <th>
-                    Percentage of total liquidity in base liquidity:
+                    Percentage of base liquidity in position:
                 </th>
                 <td>
                     <input type="number" readonly="true" id="basePercentage"/>
@@ -101,7 +101,7 @@
             </tr>
             <tr>
                 <th>
-                    Percentage of total liquidity in quote liquidity:
+                    Percentage of quote liquidity in position:
                 </th>
                 <td>
                     <input type="number" readonly="true" id="quotePercentage"/>
