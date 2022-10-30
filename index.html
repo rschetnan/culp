@@ -6,20 +6,20 @@
         <script>
             function calculate()
             {
-                let quotedLiquidity = eval(document.getElementById("quotedLiquidity").value);
+                let baseLiquidity = eval(document.getElementById("baseLiquidity").value);
                 let upperBound = eval(document.getElementById("upperBound").value);
                 let lowerBound = eval(document.getElementById("lowerBound").value);
-                let currentQuotedPrice = eval(document.getElementById("currentQuotedPrice").value);
-                let liquidityX = quotedLiquidity * Math.sqrt(currentQuotedPrice) * Math.sqrt(upperBound) / (Math.sqrt(upperBound) - Math.sqrt(currentQuotedPrice))
-                let baseLiquidity = liquidityX * (Math.sqrt(currentQuotedPrice) - Math.sqrt(lowerBound));
-                let quotedLiquidityCost = quotedLiquidity * currentQuotedPrice;
-                let totalLiquidityCost = quotedLiquidityCost + baseLiquidity;
-                let quotedLiquidityPecentageByCost = quotedLiquidityCost / totalLiquidityCost * 100;
+                let currentPrice = eval(document.getElementById("currentPrice").value);
+                let liquidityX = baseLiquidity * Math.sqrt(currentPrice) * Math.sqrt(upperBound) / (Math.sqrt(upperBound) - Math.sqrt(currentPrice))
+                let quoteLiquidity = liquidityX * (Math.sqrt(currentPrice) - Math.sqrt(lowerBound));
+                let baseLiquidityCost = baseLiquidity * currentPrice;
+                let totalLiquidityCost = quoteLiquidity + baseLiquidity;
+                let quotePecentage = quoteLiquidity / totalLiquidityCost * 100;
                 let basePercentage = baseLiquidity /  totalLiquidityCost * 100;
-                document.getElementById("quotedPercentage").value = Math.round(quotedLiquidityPecentageByCost);
+                document.getElementById("quotePercentage").value = Math.round(quotePecentage);
                 document.getElementById("basePercentage").value = Math.round(basePercentage);
-                document.getElementById("baseLiquidity").value = baseLiquidity;
-                document.getElementById("quotedLiquidityCost").value = quotedLiquidityCost;
+                document.getElementById("quoteLiquidity").value = quoteLiquidity;
+                document.getElementById("baseLiquidityCost").value = baseLiquidityCost;
                 document.getElementById("totalLiquidityCost").value = totalLiquidityCost;
 
             }
@@ -35,21 +35,21 @@
         <table>
             <tr>
                 <th>
-                    Amount of quoted liquidity to add:
+                    Amount of base liquidity to add:
                 </th>
                 <td>
-                    <input type="number" id="quotedLiquidity"/>
+                    <input type="number" id="baseLiquidity"/>
                 </td>
             </tr>
             <tr>
-                <th>Upper bound of liquidity range in base currency:</th>
+                <th>Maximum price:</th>
                 <td>
                     <input type="number" id="upperBound"/>
                 </td>
             </tr>
             <tr>
                 <th>
-                    Lower bound of liquidity range in base currency:
+                    Minimum price:
                 </th>
                 <td>
                     <input type="number" id="lowerBound"/>
@@ -57,10 +57,10 @@
             </tr>
             <tr>
                 <th>
-                    Current price of quoted currency:
+                    Current price:
                 </th>
                 <td>
-                    <input type="number" id="currentQuotedPrice"/>
+                    <input type="number" id="currentPrice"/>
                 </td>
             </tr>
             <tr>
@@ -69,18 +69,18 @@
             </tr>
             <tr>
                 <th>
-                    Amount of base liquidity to add:
+                    Amount of quote liquidity to add:
                 </th>
                 <td>
-                    <input type="number" readonly="true" id="baseLiquidity"/>
+                    <input type="number" readonly="true" id="quoteLiquidity"/>
                 </td>
             </tr>
             <tr>
                 <th>
-                    Quoted liquidity cost:
+                    Base liquidity cost:
                 </th>
                 <td>
-                    <input type="number" readonly="true" id="quotedLiquidityCost"/>
+                    <input type="number" readonly="true" id="baseLiquidityCost"/>
                 </td>
             </tr>
             <tr>
@@ -101,10 +101,10 @@
             </tr>
             <tr>
                 <th>
-                    Percentage of total liquidity in quoted liquidity cost:
+                    Percentage of total liquidity in quote liquidity:
                 </th>
                 <td>
-                    <input type="number" readonly="true" id="quotedPercentage"/>
+                    <input type="number" readonly="true" id="quotePercentage"/>
                 </td>
             </tr>
             <tr>
