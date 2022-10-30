@@ -13,7 +13,7 @@
                 let liquidityX = baseLiquidity * Math.sqrt(currentPrice) * Math.sqrt(upperBound) / (Math.sqrt(upperBound) - Math.sqrt(currentPrice))
                 let quoteLiquidity = liquidityX * (Math.sqrt(currentPrice) - Math.sqrt(lowerBound));
                 let baseLiquidityCost = baseLiquidity * currentPrice;
-                let totalLiquidityCost = quoteLiquidity + baseLiquidity;
+                let totalLiquidityCost = quoteLiquidity + baseLiquidityCost;
                 let quotePecentage = quoteLiquidity / totalLiquidityCost * 100;
                 let basePercentage = baseLiquidityCost /  totalLiquidityCost * 100;
                 document.getElementById("quotePercentage").value = Math.round(quotePecentage);
