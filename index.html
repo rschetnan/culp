@@ -28,6 +28,32 @@
             th {
                 text-align: right;
             }
+            .tooltip {
+                position: relative;
+                display: inline-block;
+                border-bottom: 1px dotted black;
+            }
+
+            .tooltip .tooltiptext {
+                visibility: hidden;
+                width: 120px;
+                background-color: black;
+                color: #fff;
+                text-align: center;
+                border-radius: 6px;
+                padding: 5px 0;
+                
+                /* Position the tooltip */
+                position: absolute;
+                z-index: 1;
+                top: -5px;
+                left: 105%;
+            }
+
+            .tooltip:hover .tooltiptext {
+            visibility: visible;
+            }
+
         </style>
     </head>
     <body>
@@ -40,11 +66,24 @@
                 <td>
                     <input type="number" id="baseLiquidity"/>
                 </td>
+                <td>
+                    <div class="tooltip">What's this?
+                        <span class="tooltiptext">The amount of base liquidity. For example, if you are opening a position
+                            with an ETH/USDC pair, this is the amount of ETH you are adding to your position.
+                        </span>
+                    </div>
+                </td>
             </tr>
             <tr>
                 <th>Maximum price:</th>
                 <td>
                     <input type="number" id="upperBound"/>
+                </td>
+                <td>
+                    <div class="tooltip">What's this?
+                        <span class="tooltiptext">The maximum base currency price. For example, if you are opening a position
+                            with an ETH/USDC pair, this is the maximum price of ETH in USDC for your position.</span>
+                    </div>
                 </td>
             </tr>
             <tr>
@@ -54,6 +93,12 @@
                 <td>
                     <input type="number" id="lowerBound"/>
                 </td>
+                <td>
+                    <div class="tooltip">What's this?
+                        <span class="tooltiptext">The minimum base currency price. For example, if you are opening a position
+                            with an ETH/USDC pair, this is the minimum price of ETH in USDC for your position.</span>
+                    </div>
+                </td>
             </tr>
             <tr>
                 <th>
@@ -61,6 +106,12 @@
                 </th>
                 <td>
                     <input type="number" id="currentPrice"/>
+                </td>
+                <td>
+                    <div class="tooltip">What's this?
+                        <span class="tooltiptext">The current base currency price. For example, if you are opening a position
+                            with an ETH/USDC pair, this is the current price of ETH in USDC.</span>
+                    </div>
                 </td>
             </tr>
             <tr>
@@ -74,6 +125,12 @@
                 <td>
                     <input type="number" readonly="true" id="quoteLiquidity"/>
                 </td>
+                <td>
+                    <div class="tooltip">What's this?
+                        <span class="tooltiptext">The amount of quote liquidity to add. For example, if you are opening a position
+                            with an ETH/USDC pair, this is the amount of USDC to add to your position.</span>
+                    </div>
+                </td>
             </tr>
             <tr>
                 <th>
@@ -81,6 +138,12 @@
                 </th>
                 <td>
                     <input type="number" readonly="true" id="baseLiquidityCost"/>
+                </td>
+                <td>
+                    <div class="tooltip">What's this?
+                        <span class="tooltiptext">The cost of the base liquidity in quote currency. For example, if you are opening a position
+                            with an ETH/USDC pair, this is the cost of the ETH in USDC for your position.</span>
+                    </div>
                 </td>
             </tr>
             <tr>
@@ -90,6 +153,12 @@
                 <td>
                     <input type="number" readonly="true" id="totalLiquidityCost"/>
                 </td>
+                <td>
+                    <div class="tooltip">What's this?
+                        <span class="tooltiptext">The total cost of the position in quote currency. For example, if you are opening a position
+                            with an ETH/USDC pair, this is the total cost of your position in USDC.</span>
+                    </div>
+                </td>
             </tr>
             <tr>
                 <th>
@@ -97,6 +166,12 @@
                 </th>
                 <td>
                     <input type="number" readonly="true" id="basePercentage"/>
+                </td>
+                <td>
+                    <div class="tooltip">What's this?
+                        <span class="tooltiptext">The percentage of base liquidity in the position. For example, if you are opening a position
+                            with an ETH/USDC pair, this is the percentage of ETH in your position.</span>
+                    </div>
                 </td>
             </tr>
             <tr>
@@ -106,9 +181,15 @@
                 <td>
                     <input type="number" readonly="true" id="quotePercentage"/>
                 </td>
+                <td>
+                    <div class="tooltip">What's this?
+                        <span class="tooltiptext">The percentage of quote liquidity in the position. For example, if you are opening a position
+                            with an ETH/USDC pair, this is the percentage of USDC in your position.</span>
+                    </div>
+                </td>
             </tr>
             <tr>
-                <td colspan=2>
+                <td colspan=3>
 <pre>Copyright (c) 2021 bluecoyote.net
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
