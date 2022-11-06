@@ -33,7 +33,7 @@ twitter_username: bluecoyote_net
 github_username:  rschetnan
 
 # Build settings
-theme: midnight
+theme: hacker
 #minima:
 #  skin: dark
 plugins:
