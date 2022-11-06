@@ -33,12 +33,13 @@ twitter_username: bluecoyote_net
 github_username:  rschetnan
 
 # Build settings
-theme: minima
-minima:
-  skin: dark
+#theme: minima
+#minima:
+#  skin: dark
+remote_theme: pages-themes/midnight@v0.2.0
 plugins:
   - jekyll-feed
-#  - jekyll-remote-theme
+  - jekyll-remote-theme
 #remote_theme: pages-themes/midnight@v0.2.0
 # Exclude from processing.
 # The following items will not be processed, by default.
