@@ -33,9 +33,9 @@ twitter_username: bluecoyote_net
 github_username:  rschetnan
 
 # Build settings
-theme: hacker
-#minima:
-#  skin: dark
+theme: minima
+minima:
+  skin: dark
 plugins:
   - jekyll-feed
 #  - jekyll-remote-theme
