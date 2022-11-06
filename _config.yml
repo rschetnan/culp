@@ -18,22 +18,28 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Your awesome title
-email: your-email@example.com
+title: CULP - A Concentrated Liquidity Pool Position Calculator
+email: culp@bluecoyote.net
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Concentrated liquidity pool providers can use CULP to calculate the amounts of base liquidity and quote 
+  liquidity they will need for creating new positions and for adding liquidity to existing positions. 
+  By entering the amount of base liquidity, the minimum 
+  price, maximum price, and current price, users can calculate the amount of quote liquidity needed for a
+  position, the cost of the base liquidity, the total cost of the liquidity position, the percentage of base 
+  liquidity in the position, and the percentage of quote liquidity in the position.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
+twitter_username: bluecoyote_net
+github_username:  rschetnan
 
 # Build settings
 theme: minima
+minima:
+  skin: dark
 plugins:
   - jekyll-feed
-
+#  - jekyll-remote-theme
+#remote_theme: pages-themes/midnight@v0.2.0
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
