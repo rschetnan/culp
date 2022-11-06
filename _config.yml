@@ -27,7 +27,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   price, maximum price, and current price, users can calculate the amount of quote liquidity needed for a
   position, the cost of the base liquidity, the total cost of the liquidity position, the percentage of base 
   liquidity in the position, and the percentage of quote liquidity in the position.
-baseurl: "" # the subpath of your site, e.g. /blog
+# baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: bluecoyote_net
 github_username:  rschetnan
