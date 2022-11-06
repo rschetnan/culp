@@ -36,7 +36,7 @@ github_username:  rschetnan
 #theme: minima
 #minima:
 #  skin: dark
-remote_theme: pages-themes/midnight@v0.2.0
+remote_theme: pages-themes/hacker@v0.2.0
 plugins:
   - jekyll-feed
   - jekyll-remote-theme
