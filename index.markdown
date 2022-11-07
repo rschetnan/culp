@@ -2,6 +2,7 @@
 # Feel free to add content and custom Front Matter to this file.
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
+
 layout: page
 ---
 <script>
@@ -17,12 +18,46 @@ function calculate()
 	let totalLiquidityCost = quoteLiquidity + baseLiquidityCost;
 	let quotePecentage = quoteLiquidity / totalLiquidityCost * 100;
 	let basePercentage = baseLiquidityCost /  totalLiquidityCost * 100;
-	document.getElementById("quotePercentage").appendChild(document.createTextNode(Math.round(quotePecentage).toString().concat("%")));
-	document.getElementById("basePercentage").appendChild(document.createTextNode(Math.round(basePercentage).toString().concat("%")));
-	document.getElementById("quoteLiquidity").appendChild(document.createTextNode(quoteLiquidity));
-	document.getElementById("baseLiquidityCost").appendChild(document.createTextNode(baseLiquidityCost));
-	document.getElementById("totalLiquidityCost").appendChild(document.createTextNode(totalLiquidityCost));
-
+	if(document.getElementById("quotePercentage").firstChild == null)
+	{
+		document.getElementById("quotePercentage").appendChild(document.createTextNode(Math.round(quotePecentage).toString().concat("%")));
+	}
+	else
+	{
+		document.getElementById("quotePercentage").childNodes[0].nodeValue = Math.round(quotePecentage).toString().concat("%")
+	}
+	if(document.getElementById("basePercentage").firstChild == null)
+	{
+		document.getElementById("basePercentage").appendChild(document.createTextNode(Math.round(basePercentage).toString().concat("%")));
+	}
+	else
+	{
+		document.getElementById("basePercentage").childNodes[0].nodeValue = Math.round(basePercentage).toString().concat("%")
+	}
+	if(document.getElementById("quoteLiquidity").firstChild == null)
+	{
+		document.getElementById("quoteLiquidity").appendChild(document.createTextNode(quoteLiquidity));
+	}
+	else
+	{
+		document.getElementById("quoteLiquidity").childNodes[0].nodeValue = quoteLiquidity
+	}
+	if(document.getElementById("baseLiquidityCost").firstChild == null)
+	{
+		document.getElementById("baseLiquidityCost").appendChild(document.createTextNode(baseLiquidityCost));
+	}
+	else
+	{
+		document.getElementById("baseLiquidityCost").childNodes[0].nodeValue = baseLiquidityCost
+	}
+	if(document.getElementById("baseLiquidityCost").firstChild == null)
+	{
+		document.getElementById("totalLiquidityCost").appendChild(document.createTextNode(totalLiquidityCost));
+	}
+	else
+	{
+		document.getElementById("totalLiquidityCost").childNodes[0].nodeValue = totalLiquidityCost
+	}
 }
 function setFieldFocus(fieldID)
 {
