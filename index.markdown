@@ -242,6 +242,6 @@ if you are opening a position with an ETH/USDC pair, enter the amount of ETH you
 </tr>
 </table>
 </form>
-<p>The <a href="https://rschetnan.github.io/culp/">CULP</a> calculator is provided under the <a href="https://opensource.org/licenses/MIT">MIT License</a> as stated in the <a href="/about/">About page</a>.
-See the <a href="/about/">About page</a> for more information about licensing, copyright, and methodology.</p>
+<p>The <a href="https://rschetnan.github.io/culp/">CULP</a> calculator is provided under the <a href="https://opensource.org/licenses/MIT">MIT License</a> as stated in the <a href="/culp/about/">About page</a>.
+See the <a href="/culp/about/">About page</a> for more information about licensing, copyright, and methodology.</p>
 
