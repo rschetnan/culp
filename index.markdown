@@ -18,46 +18,11 @@ function calculate()
 	let totalLiquidityCost = quoteLiquidity + baseLiquidityCost;
 	let quotePecentage = quoteLiquidity / totalLiquidityCost * 100;
 	let basePercentage = baseLiquidityCost /  totalLiquidityCost * 100;
-	if(document.getElementById("quotePercentage").firstChild == null)
-	{
-		document.getElementById("quotePercentage").appendChild(document.createTextNode(Math.round(quotePecentage).toString().concat("%")));
-	}
-	else
-	{
-		document.getElementById("quotePercentage").childNodes[0].nodeValue = Math.round(quotePecentage).toString().concat("%")
-	}
-	if(document.getElementById("basePercentage").firstChild == null)
-	{
-		document.getElementById("basePercentage").appendChild(document.createTextNode(Math.round(basePercentage).toString().concat("%")));
-	}
-	else
-	{
-		document.getElementById("basePercentage").childNodes[0].nodeValue = Math.round(basePercentage).toString().concat("%")
-	}
-	if(document.getElementById("quoteLiquidity").firstChild == null)
-	{
-		document.getElementById("quoteLiquidity").appendChild(document.createTextNode(quoteLiquidity));
-	}
-	else
-	{
-		document.getElementById("quoteLiquidity").childNodes[0].nodeValue = quoteLiquidity
-	}
-	if(document.getElementById("baseLiquidityCost").firstChild == null)
-	{
-		document.getElementById("baseLiquidityCost").appendChild(document.createTextNode(baseLiquidityCost));
-	}
-	else
-	{
-		document.getElementById("baseLiquidityCost").childNodes[0].nodeValue = baseLiquidityCost
-	}
-	if(document.getElementById("baseLiquidityCost").firstChild == null)
-	{
-		document.getElementById("totalLiquidityCost").appendChild(document.createTextNode(totalLiquidityCost));
-	}
-	else
-	{
-		document.getElementById("totalLiquidityCost").childNodes[0].nodeValue = totalLiquidityCost
-	}
+	document.getElementById("quotePercentage").childNodes[0].nodeValue = Math.round(quotePecentage).toString().concat("%")
+	document.getElementById("basePercentage").childNodes[0].nodeValue = Math.round(basePercentage).toString().concat("%")
+	document.getElementById("quoteLiquidity").childNodes[0].nodeValue = quoteLiquidity
+	document.getElementById("baseLiquidityCost").childNodes[0].nodeValue = baseLiquidityCost
+	document.getElementById("totalLiquidityCost").childNodes[0].nodeValue = totalLiquidityCost
 }
 function setFieldFocus(fieldID)
 {
@@ -175,7 +140,7 @@ if you are opening a position with an ETH/USDC pair, enter the amount of ETH you
 		Amount of quote liquidity to add:
 	</th>
 	<td id="quoteLiquidity">
-		<!-- input type="number" readonly="true" id="quoteLiquidity"/ -->
+		&nbsp;<!-- input type="number" readonly="true" id="quoteLiquidity"/ -->
 	</td>
 	<td>
 		<div class="tooltip">What's this?
